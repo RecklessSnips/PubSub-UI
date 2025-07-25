@@ -1,0 +1,10 @@
+services:
+  vue-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: news_pubsub_ui
+    ports:
+      - '5173:80' # 本地 5173 → 容器内 Nginx 的 80
+    container_name: News-PubSub
+    restart: unless-stopped
